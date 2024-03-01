@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+  </head>
+  <body>
+    <style>
+      li {
+        text-align: center;
+        border-radius: 12px;
+        margin: 0 auto;
+        padding: 10px;
+      }
+      li:hover {
+        border: rgb(254, 185, 185, 0);
+        padding: 10px 0px;
+        margin: 0 400px;
+        background-color: rgb(254, 185, 185, 0.1);
+      }
+
+      h1 {
+        color: rgb(26, 100, 214);
+        font-size: 30px;
+        font-weight: 70px;
+        line-height: 40px;
+        display: block;
+        margin: 0;
+        text-align: center;
+      }
+      h2 {
+        text-align: center;
+        list-style: none;
+        font-size: 30px;
+        line-height: 40px;
+        font-weight: 350;
+        display: block;
+      }
+      h3 {
+        text-align: center;
+        list-style: none;
+      }
+      button {
+        width: 200px;
+        margin: 24px auto;
+        display: block;
+        padding: 20px 18px;
+        font-size: 15px;
+        background: #1a64d6;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 26px;
+        transition: all 150ms ease-in-out;
+      }
+      button:hover {
+        background-color: #fff;
+        color: #1a64d6;
+      }
+      p {
+        margin: 15px auto;
+        text-align: center;
+        font-size: 18px;
+        display: block;
+        list-style: none;
+      }
+    </style>
+    <h1>
+      🌤
+      <br />Currently 21° in Tokyo
+    </h1>
+    <h2>13° /<strong>23°</strong></h2>
+    <ul>
+      <li>
+        <h3>⛈️Tomorrow</h3>
+        <p>10° /<strong>22°</strong></p>
+      </li>
+      <li>
+        <h3>🌥️Saturday</h3>
+        <p>15° /<strong>17° </strong></p>
+      </li>
+
+      <li>
+        <h3>☀️Sunday</h3>
+        <p>23° /<strong>28° </strong></p>
+      </li>
+    </ul>
+    <button>Change City</button>
+
+    <p>Coded by Zandile Gwala</p>
+    <script>
+      function changecity() {
+        let city = prompt("what city do you live in?");
+        let temprature = prompt("what temprature is it?");
+
+        if (temprature >= "4") {
+          let heading = document.querySelector("h1");
+          heading.innerHTML = "😄Currently" + temprature + "°c in" + city;
+        } else {
+          if (temprature <= "4") {
+            let heading = document.querySelector("h1");
+            heading.innerHTML = "😥Currently" + temprature + "°c in" + city;
+          }
+        }
+      }
+      let cityButton = document.querySelector("button");
+      cityButton.addEventListener("click", changecity);
+    </script>
+  </body>
+</html>
